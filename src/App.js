@@ -3,7 +3,7 @@ import {BrowserRouter, Switch, Route} from "react-router-dom"
 import {About} from './pages/about'
 import {Home} from './pages/home'
 import {Nav} from './components/navbar'
-import { AlertState } from './context/alert/alertState'
+import { AlertState } from './context/alert/AlertState'
 
 function App() {
   return (
