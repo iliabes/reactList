@@ -1,11 +1,12 @@
 import React, {useContext} from "react";
-import { AlertContext } from "../context/alert/alertContext";
 
-export const Alert() => {
-    cosnt {alert,hide} = useContext(AlertContext);
+import { AlertContext } from "../context/alert/AlertContext";
 
+export const Alert = () => {
+    const {alert,hide} = useContext(AlertContext);
+    console.log('alert',alert )
 
-    if(!alert.type) {
+    if(!alert.visible) {
         return null
     }
     return(

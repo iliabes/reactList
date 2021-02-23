@@ -8,19 +8,23 @@ import {alertReduser} from './AlertReduser'
 //редюсер на основе  state , action выдает новое состояние ъ
 // что такое reduser
 export const AlertState = ({children}) => {
+    console.log('children', children)
 // состоянию стаит и диспатч присваиваем висибл фалс
     const [state, dispath] = useReducer(alertReduser, {visible: false})
+
     const show = (text, type = 'warninng') => {
-        dispath: ({
+        console.log('text', text)
+        dispath({
             type:SHOW_ALERT,
             payload : {text, type}
         })
     }
-
+    
     const hide = () =>  dispath({type:HIDE_ALERT})
     return(
         <AlertContext.Provider value={{show,hide,alert:state}}>
             {children}
         </AlertContext.Provider>
+
     )
 }
